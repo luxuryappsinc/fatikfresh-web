@@ -1,29 +1,18 @@
-// Example: load some product JSON and show on the page
-async function loadProducts() {
-  try {
-    // URL of your JSON index file
-    const url = "https://fatikfresh.pages.dev/products/Fresh_Vegetables.json";
-    const response = await fetch(url);
+// Handle menu button
+document.getElementById("menu-btn").addEventListener("click", () => {
+  alert("Menu clicked (you can open a sidebar here)");
+});
 
-    if (!response.ok) {
-      throw new Error("Failed to load products: " + response.status);
-    }
-
-    const products = await response.json();
-    document.getElementById("message").textContent = "Available products:";
-
-    const list = document.getElementById("product-list");
-    list.innerHTML = "";
-
-    // If products is an array of URLs
-    products.slice(0, 10).forEach((productUrl, i) => {
-      const li = document.createElement("li");
-      li.innerHTML = `<a href="${productUrl}" target="_blank">Product ${i + 1}</a>`;
-      list.appendChild(li);
-    });
-  } catch (err) {
-    document.getElementById("message").textContent = "Error: " + err.message;
+// Handle language toggle
+document.getElementById("lang-toggle").addEventListener("change", (e) => {
+  if (e.target.checked) {
+    alert("Switched to Bengali");
+  } else {
+    alert("Switched to English");
   }
-}
+});
 
-loadProducts();
+// Handle login button
+document.querySelector(".login-btn").addEventListener("click", () => {
+  alert("Login button clicked");
+});

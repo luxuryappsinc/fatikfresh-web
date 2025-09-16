@@ -1,18 +1,99 @@
+/* Reset */
 body {
+  margin: 0;
   font-family: Arial, sans-serif;
-  margin: 20px;
   background: #f8f8f8;
 }
 
-h1 {
+/* AppBar */
+.appbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #2b7a0b;
+  color: white;
+  padding: 10px 16px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.appbar .left {
+  display: flex;
+  align-items: center;
+}
+
+.appbar .title {
+  font-size: 20px;
+  font-weight: bold;
+  margin-left: 10px;
+}
+
+.icon-button {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* Right side buttons */
+.appbar .right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.login-btn {
+  background: white;
   color: #2b7a0b;
+  border: none;
+  border-radius: 4px;
+  padding: 6px 12px;
+  font-weight: bold;
+  cursor: pointer;
 }
 
-ul {
-  list-style: none;
-  padding: 0;
+/* Toggle switch for language */
+.toggle {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 20px;
 }
 
-li {
-  margin: 5px 0;
+.toggle input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  background-color: #ccc;
+  border-radius: 20px;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 14px;
+  width: 14px;
+  border-radius: 50%;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #66bb6a;
+}
+
+input:checked + .slider:before {
+  transform: translateX(20px);
 }
